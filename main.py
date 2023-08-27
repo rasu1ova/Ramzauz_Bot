@@ -23,28 +23,28 @@ import webbrowser
 from telebot import types
 bot = telebot.TeleBot('6387895070:AAHjLpYxgGdfPRFgsNNyh0HOIvhDD496Sks')
 
-# @bot.message_handler(commands=['site', 'website'])
-# def site(message):
-#     webbrowser.open('https://ramza.netlify.com/')
+@bot.message_handler(commands=['site', 'website'])
+def site(message):
+    webbrowser.open('https://ramza.netlify.com/')
 
 
 
 
-# @bot.message_handler(commands=['help'])
-# def main(message):
-#     bot.send_message(message.chat.id, 'Qanday masalada yordam kerak')
+@bot.message_handler(commands=['help'])
+def main(message):
+    bot.send_message(message.chat.id, 'Qanday masalada yordam kerak')
 
-# @bot.message_handler(commands=['code'])
-# def main(message):
-#     bot.send_message(message.chat.id, message)
+@bot.message_handler(commands=['code'])
+def main(message):
+    bot.send_message(message.chat.id, message)
 
-# @bot.message_handler()
-# def info(message):
-#     if message.text.lower() == 'salom':
-#         bot.send_message(message.chat.id,f'Assalomu alaykum, {message.from_user.first_name} {message.from_user.last_name}')
-#     elif message.text.lower() == 'id':
-#         bot.reply_to(message, f'ID: {message.from_user.id}')
-#     # elif message.text.lower() == 'start':
+@bot.message_handler()
+def info(message):
+    if message.text.lower() == 'salom':
+        bot.send_message(message.chat.id,f'Assalomu alaykum, {message.from_user.first_name} {message.from_user.last_name}')
+    elif message.text.lower() == 'id':
+        bot.reply_to(message, f'ID: {message.from_user.id}')
+    # elif message.text.lower() == 'start':
 
 @bot.message_handler(commands=['start' ])
 def start(message):
